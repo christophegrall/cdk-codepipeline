@@ -12,7 +12,9 @@ export class AwesomeCodePipelineStack extends cdk.Stack {
 
     let isS3present:boolean = true;
     if(isS3present){
-      new Bucket(this, 'pp2-demo');
+      new Bucket(this, 'pp2-demo', {
+        bucketName: 'pp2-demo'
+    });
     }
 
     const repo = new codecommit.Repository(this, "Repository", {
